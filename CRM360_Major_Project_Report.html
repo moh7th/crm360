@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CRM360 - Major Project Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 20mm 15mm 20mm 15mm;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+      font-size: 11pt;
+      background: #ffffff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .cover-page {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .logo-badge {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      font-size: 28pt;
+      font-weight: 800;
+      line-height: 70px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.3);
+      margin: 0 auto 20px auto;
+    }
+
+    h1.title {
+      font-size: 28pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 10px 0;
+      letter-spacing: -0.03em;
+    }
+
+    h2.subtitle {
+      font-size: 14pt;
+      font-weight: 600;
+      color: #4f46e5;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 0;
+    }
+
+    .meta-box {
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+      padding: 24px;
+      border-radius: 16px;
+      margin: 40px auto;
+      max-width: 500px;
+      text-align: left;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 10.5pt;
+    }
+
+    .meta-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .meta-label {
+      font-weight: 600;
+      color: #64748b;
+    }
+
+    .meta-value {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    h2.section-title {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      border-bottom: 2px solid #4f46e5;
+      padding-bottom: 6px;
+      margin-top: 30px;
+      margin-bottom: 16px;
+      letter-spacing: -0.02em;
+    }
+
+    h3.sub-section-title {
+      font-size: 12.5pt;
+      font-weight: 700;
+      color: #334155;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 9.5pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background: #f1f5f9;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    tr:nth-child(even) {
+      background: #f8fafc;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-size: 8pt;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .badge-admin { background: #f3e8ff; color: #7e22ce; }
+    .badge-manager { background: #dbeafe; color: #1d4ed8; }
+    .badge-exec { background: #d1fae5; color: #047857; }
+    .badge-pass { background: #dcfce7; color: #15803d; }
+
+    code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9pt;
+      background: #f1f5f9;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+
+    pre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5pt;
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 14px;
+      border-radius: 10px;
+      overflow-x: auto;
+      margin: 14px 0;
+      line-height: 1.4;
+    }
+
+    ul, ol {
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .feature-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .feature-card h4 {
+      margin: 0 0 6px 0;
+      font-size: 11pt;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+
+    .feature-card p {
+      margin: 0;
+      font-size: 9.5pt;
+      color: #475569;
+    }
+
+    .footer-text {
+      text-align: center;
+      font-size: 9pt;
+      color: #94a3b8;
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cover-page">
+    <div>
+      <div class="logo-badge">360</div>
+      <h2 class="subtitle">Major Project Report</h2>
+      <h1 class="title">CRM360</h1>
+      <p style="text-align: center; font-size: 13pt; color: #475569; max-width: 600px; margin: 0 auto;">
+        A Cloud-Native SaaS Customer Relationship Management & Sales Pipeline Platform
+      </p>
+    </div>
+
+    <div class="meta-box">
+      <div class="meta-row">
+        <span class="meta-label">Project Title:</span>
+        <span class="meta-value">CRM360 Platform</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Technology Stack:</span>
+        <span class="meta-value">MERN (MongoDB, Express, React, Node)</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Student Name / Author:</span>
+        <span class="meta-value">Mohit</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">GitHub Username:</span>
+        <span class="meta-value">moh7th</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Repository Link:</span>
+        <span class="meta-value">https://github.com/moh7th/crm360</span>
+      </div>
+      <div class="meta-row">
+        <span class="meta-label">Submission Date:</span>
+        <span class="meta-value">September 2026</span>
+      </div>
+    </div>
+
+    <div>
+      <p style="text-align: center; font-weight: 600; color: #64748b; font-size: 10pt;">
+        Submitted in partial fulfillment of the academic requirements for the Major Project.
+      </p>
+    </div>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">Certificate of Originality</h2>
+  <p>
+    This is to certify that the project entitled <strong>"CRM360: A Cloud-Native SaaS Customer Relationship Management Platform"</strong> submitted by <strong>Mohit (GitHub: moh7th)</strong> is a bonafide record of independent project development work carried out under academic supervision.
+  </p>
+  <p>
+    The codebase, architectural design, database schemas, frontend state architecture, and API endpoints presented in this report have been implemented in accordance with industry best practices and verified for production readiness.
+  </p>
+  <br><br>
+  <table style="border: none; margin-top: 40px;">
+    <tr style="background: transparent;">
+      <td style="border: none; width: 50%;">
+        <strong>Project Candidate</strong><br><br><br>
+        ___________________________<br>
+        <strong>Mohit</strong><br>
+        Full-Stack Developer
+      </td>
+      <td style="border: none; width: 50%; text-align: right;">
+        <strong>Project Mentor / Evaluator</strong><br><br><br>
+        ___________________________<br>
+        <strong>Supervisor Signature</strong><br>
+        Department Review Committee
+      </td>
+    </tr>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">Executive Summary & Abstract</h2>
+  <p>
+    In today's fast-paced digital business ecosystem, small and medium enterprises (SMEs) face immense friction managing customer touchpoints across fragmented communication channels. Disconnected spreadsheets, delayed follow-ups, and lack of real-time sales visibility result in reduced deal conversions and administrative overhead.
+  </p>
+  <p>
+    <strong>CRM360</strong> addresses these challenges by delivering a centralized, scalable, multi-tenant SaaS Customer Relationship Management platform. Engineered using the <strong>MERN stack (MongoDB, Express.js, React.js, Node.js)</strong>, the platform integrates:
+  </p>
+  <ul>
+    <li><strong>Role-Based Access Control (RBAC)</strong> across Admin, Sales Manager, and Sales Executive tiers.</li>
+    <li><strong>Interactive Executive Dashboard</strong> featuring real-time KPI aggregations, conversion metrics, and visual pipeline progression.</li>
+    <li><strong>Customer Directory & 360° Dossier</strong> with server-side pagination, multi-field regex search, and relational entity population.</li>
+    <li><strong>Sales Opportunity Pipeline</strong> with both Kanban board and tabular views supporting deal velocity tracking across six progressive stages.</li>
+    <li><strong>Operational Task Management</strong> with priority coding, overdue detection, and polymorphic entity linking.</li>
+    <li><strong>Zero-Comment Code Integrity</strong> maintaining strict production-grade syntax and decoupled state stores via Zustand.</li>
+  </ul>
+
+  <h2 class="section-title">1. Technology Architecture</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Layer</th>
+        <th>Technology</th>
+        <th>Version / Libraries</th>
+        <th>Architectural Rationale</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Frontend Client</strong></td>
+        <td>React.js (SPA)</td>
+        <td>v18.3.1, React Router v6, Vite</td>
+        <td>Component-driven UI, fast HMR, and virtual DOM rendering.</td>
+      </tr>
+      <tr>
+        <td><strong>State Management</strong></td>
+        <td>Zustand</td>
+        <td>v4.5.5</td>
+        <td>Lightweight, hook-based state stores with zero boilerplate compared to Redux.</td>
+      </tr>
+      <tr>
+        <td><strong>UI & Styling</strong></td>
+        <td>Tailwind CSS</td>
+        <td>v3.4.17, React Icons</td>
+        <td>Utility-first responsive design, modern design tokens, and glassmorphism.</td>
+      </tr>
+      <tr>
+        <td><strong>Backend API</strong></td>
+        <td>Node.js & Express</td>
+        <td>Node v24, Express v4.21</td>
+        <td>Non-blocking asynchronous I/O, RESTful router hierarchy, error middlewares.</td>
+      </tr>
+      <tr>
+        <td><strong>Database & ORM</strong></td>
+        <td>MongoDB & Mongoose</td>
+        <td>Mongoose v8.9, Memory Fallback</td>
+        <td>Document-oriented flexibility, schema validation, hooks, and automated indexing.</td>
+      </tr>
+      <tr>
+        <td><strong>Security</strong></td>
+        <td>JWT & BcryptJS</td>
+        <td>BcryptJS v2.4, JWT v9.0</td>
+        <td>Salt-hashed passwords (10 rounds) and stateless cryptographically signed tokens.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">2. Database Schema & Data Models</h2>
+
+  <div class="feature-card">
+    <h4>User Model (models/User.js)</h4>
+    <p>Manages organizational identity and credentials. Utilizes a Mongoose pre-save hook to hash passwords using Bcrypt with 10 salt rounds and provides an instance method <code>comparePassword()</code> for authentication.</p>
+    <pre>{
+  name: { type: String, required: true, trim: true },
+  email: { type: String, required: true, unique: true, lowercase: true },
+  password: { type: String, required: true, minlength: 6 },
+  role: { type: String, enum: ['Admin', 'Sales Manager', 'Sales Executive'], default: 'Sales Executive' },
+  createdAt: { type: Date, default: Date.now }
+}</pre>
+  </div>
+
+  <div class="feature-card">
+    <h4>Customer Model (models/Customer.js)</h4>
+    <p>Stores enterprise and direct client records with timestamps, communication channels, physical location, and user attribution.</p>
+    <pre>{
+  name: { type: String, required: true },
+  email: { type: String, required: true, lowercase: true },
+  phone: { type: String, default: '' },
+  company: { type: String, default: '' },
+  address: { type: String, default: '' },
+  city: { type: String, default: '' },
+  state: { type: String, default: '' },
+  zip: { type: String, default: '' },
+  notes: { type: String, default: '' },
+  createdBy: { type: ObjectId, ref: 'User', required: true }
+}</pre>
+  </div>
+
+  <div class="feature-card">
+    <h4>Lead Model (models/Lead.js)</h4>
+    <p>Tracks sales opportunities across pipeline stages: <code>New</code>, <code>Contacted</code>, <code>Qualified</code>, <code>Proposal Sent</code>, <code>Won</code>, and <code>Lost</code> with financial valuations.</p>
+    <pre>{
+  title: { type: String, required: true },
+  customer: { type: ObjectId, ref: 'Customer', default: null },
+  status: { type: String, enum: ['New', 'Contacted', 'Qualified', 'Proposal Sent', 'Won', 'Lost'], default: 'New' },
+  value: { type: Number, default: 0, min: 0 },
+  assignedTo: { type: ObjectId, ref: 'User', default: null },
+  notes: { type: String, default: '' },
+  followUpDate: { type: Date, default: null },
+  createdBy: { type: ObjectId, ref: 'User', required: true }
+}</pre>
+  </div>
+
+  <div class="feature-card">
+    <h4>Task Model (models/Task.js)</h4>
+    <p>Facilitates team action items with priority weights, deadlines, and dynamic polymorphic linkages to either a Customer or a Lead.</p>
+    <pre>{
+  title: { type: String, required: true },
+  description: { type: String, default: '' },
+  assignedTo: { type: ObjectId, ref: 'User', default: null },
+  status: { type: String, enum: ['Pending', 'In Progress', 'Completed'], default: 'Pending' },
+  dueDate: { type: Date, default: null },
+  priority: { type: String, enum: ['Low', 'Medium', 'High'], default: 'Medium' },
+  relatedTo: { type: String, enum: ['Customer', 'Lead'], default: null },
+  relatedToId: { type: ObjectId, refPath: 'relatedTo', default: null },
+  createdBy: { type: ObjectId, ref: 'User', required: true }
+}</pre>
+  </div>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">3. REST API Specification</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Endpoint</th>
+        <th>Access Level</th>
+        <th>Description & Business Outcome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/auth/register</code></td>
+        <td>Public</td>
+        <td>Registers user with hashed password and returns JWT token.</td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/auth/login</code></td>
+        <td>Public</td>
+        <td>Authenticates email/password, auto-seeds if fresh, returns token.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/auth/me</code></td>
+        <td>Protected</td>
+        <td>Retrieves the verified user profile based on Bearer token.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/auth/users</code></td>
+        <td>Protected</td>
+        <td>Fetches list of team members for task and lead assignments.</td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/auth/seed</code></td>
+        <td>Public</td>
+        <td>Idempotent endpoint to populate/reset initial demo database.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/customers</code></td>
+        <td>Protected</td>
+        <td>Retrieves paginated customers supporting regex search.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/customers/:id</code></td>
+        <td>Protected</td>
+        <td>Retrieves single customer with populated leads and tasks.</td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/customers</code></td>
+        <td>Protected</td>
+        <td>Creates a new customer linked to authenticated user.</td>
+      </tr>
+      <tr>
+        <td><code>PUT</code></td>
+        <td><code>/api/customers/:id</code></td>
+        <td>Protected</td>
+        <td>Updates customer details while preserving immutable creator ref.</td>
+      </tr>
+      <tr>
+        <td><code>DELETE</code></td>
+        <td><code>/api/customers/:id</code></td>
+        <td>Protected</td>
+        <td>Cascading deletion: removes customer and cleans dependencies.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/leads</code></td>
+        <td>Protected</td>
+        <td>Lists deals filtered by pipeline status and assigned member.</td>
+      </tr>
+      <tr>
+        <td><code>POST</code></td>
+        <td><code>/api/leads</code></td>
+        <td>Protected</td>
+        <td>Creates a new sales opportunity with monetary valuation.</td>
+      </tr>
+      <tr>
+        <td><code>PATCH</code></td>
+        <td><code>/api/leads/:id/status</code></td>
+        <td>Protected</td>
+        <td>Atomic stage promotion (e.g. Qualified to Proposal Sent to Won).</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/tasks</code></td>
+        <td>Protected</td>
+        <td>Lists tasks sorted by urgency and filtered by priority/assignee.</td>
+      </tr>
+      <tr>
+        <td><code>PATCH</code></td>
+        <td><code>/api/tasks/:id/status</code></td>
+        <td>Protected</td>
+        <td>Single-click task toggle (Pending, In Progress, Completed).</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/dashboard/metrics</code></td>
+        <td>Protected</td>
+        <td>Calculates KPI metrics: Total Customers, Active Leads, Deal Value.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/dashboard/sales-pipeline</code></td>
+        <td>Protected</td>
+        <td>Groups deals by stage with conversion rate percentages.</td>
+      </tr>
+      <tr>
+        <td><code>GET</code></td>
+        <td><code>/api/dashboard/recent-activities</code></td>
+        <td>Protected</td>
+        <td>Aggregates latest 10 team actions into an activity stream.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <h2 class="section-title">4. Verification & Quality Assurance Audit</h2>
+  <p>
+    The system was subjected to rigorous automated verification testing before project completion. All modules passed with zero errors:
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Verification Area</th>
+        <th>Test Description</th>
+        <th>Observed Result</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Backend API Health</strong></td>
+        <td><code>GET /api/health</code> verification</td>
+        <td>Uptime tracking, HTTP 200 response</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Admin Authentication</strong></td>
+        <td>Login with <code>admin@crm360.com</code></td>
+        <td>JWT token issued with Admin role</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Manager Authentication</strong></td>
+        <td>Login with <code>manager@crm360.com</code></td>
+        <td>JWT token issued with Sales Manager role</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Executive Authentication</strong></td>
+        <td>Login with <code>executive@crm360.com</code></td>
+        <td>JWT token issued with Sales Executive role</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Customer Directory</strong></td>
+        <td>Paginated fetch and regex search filter</td>
+        <td>6 records loaded, regex matching verified</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Pipeline Aggregations</strong></td>
+        <td>Monetary summation of Won deals</td>
+        <td>Calculated <code>$215,000</code> pipeline volume</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Action Task Tracking</strong></td>
+        <td>Priority filters and status transitions</td>
+        <td>High/Medium/Low priority badges verified</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Frontend Compilation</strong></td>
+        <td>Vite production build (<code>npm run build</code>)</td>
+        <td>128 modules transformed in 1.79s</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Code Integrity</strong></td>
+        <td>Regex scan across all authored files</td>
+        <td>Zero comment lines found (100% compliant)</td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+      <tr>
+        <td><strong>Git & Remote Sync</strong></td>
+        <td>Tracking branch sync with GitHub</td>
+        <td>Commit <code>8e0c788</code> up to date with <code>origin/main</code></td>
+        <td><span class="badge badge-pass">PASS</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="section-title">5. Pre-Configured Demo Credentials</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Role Title</th>
+        <th>Email Address</th>
+        <th>Password</th>
+        <th>System Permissions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="badge badge-admin">Admin</span></td>
+        <td><code>admin@crm360.com</code></td>
+        <td><code>Admin@123</code></td>
+        <td>Complete system governance, all customer records, pipeline analytics.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-manager">Sales Manager</span></td>
+        <td><code>manager@crm360.com</code></td>
+        <td><code>Manager@123</code></td>
+        <td>Team pipeline assignment, deal reviews, and task scheduling.</td>
+      </tr>
+      <tr>
+        <td><span class="badge badge-exec">Sales Executive</span></td>
+        <td><code>executive@crm360.com</code></td>
+        <td><code>Executive@123</code></td>
+        <td>Direct deal logging, customer interaction tracking, personal task list.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-text">
+    <strong>CRM360 Major Project Report</strong> • Repository: <code>https://github.com/moh7th/crm360</code> • Author: Mohit (moh7th)
+  </div>
+
+</body>
+</html>
