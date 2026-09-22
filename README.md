@@ -205,3 +205,12 @@ You can log in instantly using the demo buttons on the login screen or with thes
 - `GET /api/dashboard/metrics` - Aggregated KPI counts and won contract volume
 - `GET /api/dashboard/recent-activities` - 10 most recent team operations
 - `GET /api/dashboard/sales-pipeline` - Grouped pipeline volume and conversion percentage
+
+---
+
+## Author & Project Documentation
+- **Author**: Mohith B K
+- **GitHub**: [@moh7th](https://github.com/moh7th)
+- **Repository**: [https://github.com/moh7th/crm360](https://github.com/moh7th/crm360)
+- **Submission Date**: 22 September 2026
+- **Project Report**: [CRM360_Major_Project_Report.pdf](CRM360_Major_Project_Report.pdf)
